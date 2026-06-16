@@ -1,10 +1,10 @@
-import getImagesByQuery from './js/pixabay-api';
+import getImagesByQuery from './js/pixabay-api.js';
 import {
   createGallery,
   clearGallery,
   showLoader,
   hideLoader,
-} from './js/render-fucntions';
+} from './js/render-functions.js';
 // Описаний у документації
 import iziToast from 'izitoast';
 // Додатковий імпорт стилів

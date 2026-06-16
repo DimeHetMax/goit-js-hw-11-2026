@@ -10,7 +10,7 @@ const getImagesByQuery = (query)=>{
         params:{
             key: KEY,
             q: query,
-            mage_type:"photo",
+            image_type:"photo",
             page:1,
             orientation:"horizontal",
             safesearch:true,
