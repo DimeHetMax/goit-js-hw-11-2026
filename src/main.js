@@ -23,8 +23,6 @@ iziToast.settings({
 });
 
 const form = document.querySelector('.form');
-const gallery = document.querySelector('.gallery');
-const textError = document.querySelector('.error');
 
 const handleSubmit = event => {
   event.preventDefault();
@@ -36,8 +34,7 @@ const handleSubmit = event => {
   }
   clearGallery();
   getImagesByQuery(text.trim())
-    .then(({ status, data }) => {
-      console.log(status, data);
+    .then(({ data }) => {
       const { hits } = data;
       if (hits.length === 0) {
         throw Error(
