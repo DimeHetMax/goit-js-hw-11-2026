@@ -17,25 +17,26 @@ iziToast.settings({
   maxWidth: '400px',
   position: 'topRight',
   transitionOut: 'flipOutX',
-  iconUrl:"./img/octagon.svg",
-  messageColor:"#fff",
-  color:"#EF4040"
+  iconUrl: './img/octagon.svg',
+  messageColor: '#fff',
+  color: '#EF4040',
 });
 
 const form = document.querySelector('.form');
 
 const handleSubmit = event => {
   event.preventDefault();
-  showLoader();
+
   const formData = new FormData(event.target);
   const text = formData.get('search-text');
   if (text.length === 0) {
     return;
   }
+  showLoader();
   clearGallery();
+
   getImagesByQuery(text.trim())
-    .then(({ data }) => {
-      const { hits } = data;
+    .then(({hits}) => {
       if (hits.length === 0) {
         throw Error(
           'Sorry, there are no images matching your search query. Please try again!'
@@ -52,7 +53,7 @@ const handleSubmit = event => {
         message: `${err}`,
       });
     })
-    .finally(hideLoader());
+    .finally(() => hideLoader());
 
   event.target.reset();
 };

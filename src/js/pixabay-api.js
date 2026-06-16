@@ -16,7 +16,10 @@ const getImagesByQuery = (query)=>{
             safesearch:true,
             per_page:21,
         }
-    })
+    }).then(response => {
+    return response.data;
+  });
+
 }
 
 export default getImagesByQuery
